@@ -1,32 +1,196 @@
-# cars_price_prediction
+# Car Price Prediction Using Machine Learning
 
-## Objective
+## Overview
 
-In this project I'm trying to analyse and visualize the used car prices from the dataset availabe at Kaggle in order to predict the most probable car prices with the use of basic linear regression models: Linear Regression, Ridge Regression, Lasso Regression and ElasticNet Regression.
+The price of a used car depends on several factors such as vehicle age, fuel type, transmission, ownership history, and kilometers driven. This project aims to predict the selling price of used cars using machine learning regression techniques.
 
-Vehicle dataset from cardekho : https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho
+Multiple regression models were trained and compared to estimate vehicle prices accurately based on market and vehicle attributes. The project demonstrates the complete machine learning workflow, from data preprocessing and exploratory analysis to model evaluation and performance comparison.
 
-## Dataset Description
-This dataset contains information about used cars listed on www.cardekho.com. We are going to use for finding predictions of price with the use of regression models.
+---
 
-### Size of the dataset : 301 records * 9 features
- 
-### The datasets consist of several features include:
+## Dataset
 
-1. Car_Name : This column should be filled with the name of the car.
+The dataset contains **301 used car records** with the following attributes:
 
-2. Year : This column should be filled with the year in which the car was bought.
+| Feature | Description |
+|----------|-------------|
+| Car_Name | Name of the car |
+| Year | Manufacturing year |
+| Selling_Price | Selling price of the car (Target Variable) |
+| Present_Price | Current ex-showroom price |
+| Kms_Driven | Distance driven by the vehicle |
+| Fuel_Type | Petrol / Diesel / CNG |
+| Seller_Type | Dealer / Individual |
+| Transmission | Manual / Automatic |
+| Owner | Number of previous owners |
 
-3. Selling_Price : This column should be filled with the price the owner wants to sell the car at.
+---
 
-4. Present_Price : This is the current ex-showroom price of the car.
+## Technologies Used
 
-5. Kms_Driven : This is the distance completed by the car in km.
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
 
-6. Fuel_Type : Fuel type of the car i.e Diesel,Petrol,CNG
+---
 
-7. Seller_Type : Defines whether the seller is a dealer or an individual.
+## Project Workflow
 
+### Data Preprocessing
+
+- Removed irrelevant features
+- Handled categorical variables
+- Applied feature encoding
+- Prepared training and testing datasets
+
+### Exploratory Data Analysis
+
+- Analyzed vehicle price distributions
+- Studied relationships between vehicle attributes and selling price
+- Visualized correlations among features
+
+### Model Development
+
+The following regression models were implemented and compared:
+
+- Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Elastic Net Regression
+
+### Model Evaluation
+
+Models were evaluated using:
+
+- R² Score
+- Training Performance
+- Validation Performance
+
+---
+
+## Exploratory Analysis
+
+Key observations from the dataset:
+
+- Newer vehicles generally have higher selling prices.
+- Present price strongly influences resale value.
+- Vehicles with lower mileage tend to retain more value.
+- Fuel type and transmission significantly impact pricing.
+- Individual sellers typically list vehicles at lower prices than dealers.
+
+---
+
+## Results
+
+| Model | R² Score |
+|---------|---------|
+| Linear Regression | 0.77 |
+| Ridge Regression | 0.77 |
+| Lasso Regression | 0.77 |
+| Elastic Net Regression | 0.77 |
+
+### Best Performance
+
+- Achieved an **R² score of 0.77** on unseen data.
+- Successfully captured key relationships between vehicle characteristics and resale value.
+- Demonstrated the effectiveness of regression techniques for used car price estimation.
+
+---
+
+## Project Structure
+
+```text
+Car-Price-Prediction/
+│
+├── car data.csv
+├── car_price_predict.py
+├── README.md
+│
+├── images/
+│   ├── correlation_heatmap.png
+│   ├── price_distribution.png
+│   └── feature_analysis.png
+│
+└── requirements.txt
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Car-Price-Prediction.git
+
+cd Car-Price-Prediction
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
+
+Run the project using:
+
+```bash
+python Car_Price_Prediction.py
+```
+
+The script will:
+
+1. Load and preprocess the dataset.
+2. Perform exploratory data analysis.
+3. Train multiple regression models.
+4. Compare model performance.
+5. Display evaluation metrics.
+
+---
+
+## Applications
+
+- Used Car Price Estimation
+- Automotive Market Analysis
+- Vehicle Valuation Systems
+- Online Car Marketplace Platforms
+- Pricing Recommendation Tools
+
+---
+
+## Future Improvements
+
+- Increase dataset size for improved generalization.
+- Perform hyperparameter tuning.
+- Implement ensemble-based regression techniques.
+- Deploy the model using Streamlit or Flask.
+- Integrate real-time market pricing data.
+
+---
+
+## Key Learnings
+
+- Data preprocessing and feature encoding
+- Exploratory data analysis
+- Regression model implementation
+- Model comparison and evaluation
+- Predictive analytics using machine learning
+
+---
+
+## Author
+
+Sathwik Gorrela
+
+B.Tech Mechanical Engineering  
+Indian Institute of Technology Madras
 8. Transmission : Defines whether the car is manual or automatic.
 
 9. Owner : Defines the number of owners the car has previously had.
